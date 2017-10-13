@@ -8,8 +8,10 @@ export class SnapEvent extends AbstractEvent {
 
 export class SnapInEvent extends SnapEvent {
   static type = 'snap:in';
+  static cancelable = true;
 }
 
 export class SnapOutEvent extends SnapEvent {
   static type = 'snap:out';
+  static cancelable = true;
 }

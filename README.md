@@ -143,7 +143,7 @@ on elements in certain states.
 | --------------------- | ---------------------------------------------------------- | ----------- | -------------------- |
 | `drag:start`          | Gets fired when drag action begins                         | true        | Prevents drag start  |
 | `drag:move`           | Gets fired when moving a draggable around                  | false       | -                    |
-| `drag:over`           | Gets fired when dragging over other draggable              | false       | -                    |
+| `drag:over`           | Gets fired when dragging over other draggable              | true        | Prevents drag over   |
 | `drag:over:container` | Gets fired when dragging over other draggable container    | false       | -                    |
 | `drag:out`            | Gets fired when dragging out of other draggable            | false       | -                    |
 | `drag:out:container`  | Gets fired when dragging out of other draggable container  | false       | -                    |

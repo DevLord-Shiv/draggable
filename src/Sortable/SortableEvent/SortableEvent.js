@@ -8,6 +8,7 @@ export class SortableEvent extends AbstractEvent {
 
 export class SortableStartEvent extends SortableEvent {
   static type = 'sortable:start';
+  static cancelable = true;
 
   get startIndex() {
     return this.data.startIndex;

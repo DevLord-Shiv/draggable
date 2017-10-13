@@ -14,8 +14,10 @@ export class DroppableEvent extends AbstractEvent {
 
 export class DroppableOverEvent extends DroppableEvent {
   static type = 'droppable:over';
+  static cancelable = true;
 }
 
 export class DroppableOutEvent extends DroppableEvent {
   static type = 'droppable:out';
+  static cancelable = true;
 }

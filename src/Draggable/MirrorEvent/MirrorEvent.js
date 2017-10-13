@@ -40,6 +40,7 @@ export class MirrorAttachedEvent extends MirrorEvent {
 
 export class MirrorMoveEvent extends MirrorEvent {
   static type = 'mirror:move';
+  static cancelable = true;
 }
 
 export class MirrorDestroyEvent extends MirrorEvent {

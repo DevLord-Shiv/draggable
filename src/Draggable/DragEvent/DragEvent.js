@@ -1,6 +1,8 @@
 import AbstractEvent from 'shared/AbstractEvent';
 
 export class DragEvent extends AbstractEvent {
+  static type = 'drag';
+
   get source() {
     return this.data.source;
   }
@@ -36,17 +38,23 @@ export class DragEvent extends AbstractEvent {
 
 export class DragStartEvent extends DragEvent {
   static type = 'drag:start';
+  static cancelable = true;
 }
 
 export class DragMoveEvent extends DragEvent {
   static type = 'drag:move';
 }
 
-export class DragOutContainerEvent extends DragEvent {
-  static type = 'drag:out:container';
+export class DragOverEvent extends DragEvent {
+  static type = 'drag:over';
+  static cancelable = true;
 
   get overContainer() {
     return this.data.overContainer;
+  }
+
+  get over() {
+    return this.data.over;
   }
 }
 
@@ -70,15 +78,11 @@ export class DragOverContainerEvent extends DragEvent {
   }
 }
 
-export class DragOverEvent extends DragEvent {
-  static type = 'drag:over';
+export class DragOutContainerEvent extends DragEvent {
+  static type = 'drag:out:container';
 
   get overContainer() {
     return this.data.overContainer;
-  }
-
-  get over() {
-    return this.data.over;
   }
 }
 

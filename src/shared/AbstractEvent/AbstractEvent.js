@@ -14,23 +14,32 @@ export default class AbstractEvent {
     this.data = data;
   }
 
+  /**
+   * Read-only type
+   * @abstract
+   * @return {String}
+   */
   get type() {
     return this.constructor.type;
   }
 
+  /**
+   * Read-only cancelable
+   * @abstract
+   * @return {Boolean}
+   */
   get cancelable() {
     return this.constructor.cancelable;
   }
 
   /**
-   * Cancels a specific event
+   * Cancels the event instance
    * @abstract
    */
   cancel() {
-    // We should be declaring if events are cancelable
-    // if (!this.cancelable) {
-    //   throw new Error('This event is not cancelable');
-    // }
+    if (!this.cancelable) {
+      throw new Error('This event is not cancelable');
+    }
     this._canceled = true;
   }
 
